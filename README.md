@@ -41,6 +41,8 @@ alertController.backgroundTapDismissalGestureEnabled = true
 
 ```
 
+![EZAlertController](/EZAlertController.gif)
+
 ###Requirements
 
 - Swift version 2.0
