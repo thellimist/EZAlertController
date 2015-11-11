@@ -8,25 +8,17 @@
 
 import UIKit
 
-class EZAlertView {
+class EZAlertController {
     
     //==========================================================================================================
     // MARK: - Singleton
     //==========================================================================================================
     
-    class var instance : EZAlertView {
+    class var instance : EZAlertController {
         struct Static {
-            static let inst : EZAlertView = EZAlertView ()
+            static let inst : EZAlertController = EZAlertController ()
         }
         return Static.inst
-    }
-    
-    //==========================================================================================================
-    // MARK: - Init
-    //==========================================================================================================
-    
-    init() {
-
     }
     
     //==========================================================================================================
@@ -41,7 +33,6 @@ class EZAlertView {
         }
         return topController!
     }
-    
     
     //==========================================================================================================
     // MARK: - Class Functions
@@ -69,21 +60,21 @@ class EZAlertView {
     }
     
     class func alert(title: String, message: String, cancelBlock: () -> (), acceptBlock: () -> ()) -> UIAlertController {
-        return alert(title, message: message, acceptMessage: "Accept", cancelMessage: "Cancel", cancelBlock: { () -> () in
+        return alert(title, message: message, leftButtonMessage: "Cancel", rightButtonMessage: "Accept", leftBlock: { () -> () in
             cancelBlock()
-            }, acceptBlock: { () -> () in
+            }) { () -> () in
                 acceptBlock()
-        })
+        }
     }
     
-    class func alert(title: String, message: String, acceptMessage: String, cancelMessage: String, cancelBlock: () -> (), acceptBlock: () -> ()) -> UIAlertController {
+    class func alert(title: String, message: String, leftButtonMessage: String, rightButtonMessage: String, leftBlock: () -> (), rightBlock: () -> ()) -> UIAlertController {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let declineButton = UIAlertAction(title: cancelMessage, style: .Default, handler: { (action: UIAlertAction) in
-            cancelBlock()
+        let declineButton = UIAlertAction(title: leftButtonMessage, style: .Default, handler: { (action: UIAlertAction) in
+            leftBlock()
         })
-        let acceptButton = UIAlertAction(title: acceptMessage, style: .Default, handler: { (action: UIAlertAction) in
-            acceptBlock()
+        let acceptButton = UIAlertAction(title: rightButtonMessage, style: .Default, handler: { (action: UIAlertAction) in
+            rightBlock()
         })
         alert.addAction(declineButton)
         alert.addAction(acceptButton)
@@ -91,7 +82,4 @@ class EZAlertView {
         instance.topMostController().presentViewController(alert, animated: true, completion: nil)
         return alert
     }
-    
-    
-
 }
