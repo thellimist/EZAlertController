@@ -6,6 +6,8 @@ Easy Swift UIAlertController
 - Button action with closures
 - Customizable
 
+![EZAlertController](/EZAlertController.gif)
+
 ## Usage
 
 ```swift
