@@ -1,12 +1,12 @@
 # Check list
 # git pull
 # change s.version
-# pod lib lint SwiftRandom.podspec
+# pod lib lint EZAlertController.podspec
 # git tag <New Tag>
 # git add & git commit
 # git push
-# pod spec lint SwiftRandom.podspec
-# pod trunk push SwiftRandom.podspec
+# pod spec lint EZAlertController.podspec
+# pod trunk push EZAlertController.podspec
 
 Pod::Spec.new do |s|
 s.name             = "EZAlertController"
