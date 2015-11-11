@@ -2,6 +2,8 @@ EZAlertController
 ==============
 Easy Swift UIAlertController
 
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg)
+
 - One line UIAlertController
 - Button action with closures
 - Customizable
@@ -48,6 +50,16 @@ alertController.backgroundTapDismissalGestureEnabled = true
 - Swift version 2.0
 
 ## Installation
+
+### Install via CocoaPods
+
+You can use [Cocoapods](http://cocoapods.org/) to install `EZAlertController` by adding it to your `Podfile`:
+```ruby
+platform :ios, '8.0'
+use_frameworks!
+
+pod  'EZAlertController'
+```
 
 ### Install Manually
 
