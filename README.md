@@ -1,8 +1,8 @@
 EZAlertController
 ==============
-Easy Swift UIAlertController
-
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg)
+
+Easy Swift UIAlertController
 
 - One line UIAlertController
 - Button action with closures
