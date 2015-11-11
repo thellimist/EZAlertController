@@ -6,8 +6,6 @@ Easy Swift UIAlertController
 - Button action with closures
 - Customizable
 
-![EZAlertController](/EZAlertController.gif)
-
 ## Usage
 
 ```swift
@@ -42,6 +40,8 @@ alertController.backgroundTapDismissalGestureEnabled = true
 
 
 ```
+
+![EZAlertController](/EZAlertController.gif)
 
 ###Requirements
 
