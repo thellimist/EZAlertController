@@ -10,14 +10,20 @@ Easy Swift UIAlertController
 
 ## Usage
 
+### One Button Alert
+
 ```swift
-// Single Button Alerts
 EZAlertController.alert("My Title")
 EZAlertController.alert("My Title", message: "My Message")
 EZAlertController.alert("My Title", message: "My Message", acceptMessage: "OK") { () -> () in
     print("cliked OK")
 }
+```
+![EZAlertController](http://i.imgur.com/A2M444x.png)
 
+### Two Button Alerts
+
+```swift
 // Two Button Alerts
 EZAlertController.alert("My Title", message: "My Message", cancelBlock: 
   { () -> () in
@@ -32,7 +38,14 @@ EZAlertController.alert("My Title", message: "My Message", leftButtonMessage: "C
     }) { () -> () in
       print("clicked delete")
 }
+```
+![EZAlertController](/EZAlertController.gif)
 
+![EZAlertController](http://i.imgur.com/Qwgg71G.png)
+
+### Customizable
+
+```swift
 // Customize UIAlertController
 let alertController = EZAlertController.alert("My Title")
 alertController.buttonCornerRadius = 20.0f;
@@ -40,12 +53,7 @@ alertController.view.tintColor = self.view.tintColor;
 alertController.titleFont = UIFont(name: "AvenirNext-Bold", size: 19.0)
 alertController.backgroundTapDismissalGestureEnabled = true
 
-
 ```
-
-![EZAlertController](/EZAlertController.gif)
-
-![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
 ###Requirements
 
