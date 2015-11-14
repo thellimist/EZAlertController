@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EZAlertController {
+public class EZAlertController {
 
     //==========================================================================================================
     // MARK: - Singleton
@@ -38,17 +38,17 @@ class EZAlertController {
     // MARK: - Class Functions
     //==========================================================================================================
 
-    class func alert(title: String) -> UIAlertController {
+    public class func alert(title: String) -> UIAlertController {
         return alert(title, message: "")
     }
 
-    class func alert(title: String, message: String) -> UIAlertController {
+    public class func alert(title: String, message: String) -> UIAlertController {
         return alert(title, message: message, acceptMessage: "OK") { () -> () in
             // Do nothing
         }
     }
 
-    class func alert(title: String, message: String, acceptMessage: String, acceptBlock: () -> ()) -> UIAlertController {
+    public class func alert(title: String, message: String, acceptMessage: String, acceptBlock: () -> ()) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let acceptButton = UIAlertAction(title: acceptMessage, style: .Default, handler: { (action: UIAlertAction) in
             acceptBlock()
@@ -59,7 +59,7 @@ class EZAlertController {
         return alert
     }
 
-    class func alert(title: String, message: String, cancelBlock: () -> (), acceptBlock: () -> ()) -> UIAlertController {
+    public class func alert(title: String, message: String, cancelBlock: () -> (), acceptBlock: () -> ()) -> UIAlertController {
         return alert(title, message: message, leftButtonMessage: "Cancel", rightButtonMessage: "Accept", leftBlock: { () -> () in
             cancelBlock()
             }) { () -> () in
@@ -67,7 +67,7 @@ class EZAlertController {
         }
     }
 
-    class func alert(title: String, message: String, leftButtonMessage: String, rightButtonMessage: String, leftBlock: () -> (), rightBlock: () -> ()) -> UIAlertController {
+    public class func alert(title: String, message: String, leftButtonMessage: String, rightButtonMessage: String, leftBlock: () -> (), rightBlock: () -> ()) -> UIAlertController {
 
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let declineButton = UIAlertAction(title: leftButtonMessage, style: .Default, handler: { (action: UIAlertAction) in
