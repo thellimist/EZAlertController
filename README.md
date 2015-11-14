@@ -4,9 +4,9 @@ EZAlertController
 
 Easy Swift UIAlertController
 
-- One line UIAlertController
-- Button action with closures
-- Customizable
+- One line setup for all UIAlertControllers
+- Button action with closures instead of selectors
+- Easily customizable
 
 ## Usage
 
@@ -64,7 +64,7 @@ You can use [Cocoapods](http://cocoapods.org/) to install `EZAlertController` by
 platform :ios, '8.0'
 use_frameworks!
 
-pod  'EZAlertController'
+pod 'EZAlertController'
 ```
 
 ### Install Manually
