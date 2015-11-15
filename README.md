@@ -1,6 +1,6 @@
 EZAlertController
 ==============
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Easy Swift UIAlertController
 
@@ -81,5 +81,5 @@ pod 'EZAlertController'
 swift, alert, AlertView, AlertViewController, UIAlertView, UIAlertViewController
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 
