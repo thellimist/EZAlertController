@@ -79,3 +79,7 @@ pod 'EZAlertController'
 
 ##Keywords
 swift, alert, AlertView, AlertViewController, UIAlertView, UIAlertViewController
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
