@@ -7,6 +7,7 @@ Easy Swift UIAlertController
 - One line setup for all UIAlertControllers
 - Button action with closures instead of selectors
 - Easily customizable
+- Easy action sheets
 
 ## Usage
 
@@ -50,6 +51,18 @@ alertController.titleFont = UIFont(name: "AvenirNext-Bold", size: 19.0)
 alertController.backgroundTapDismissalGestureEnabled = true
 ...
 ```
+
+### Action Sheet
+
+```swift
+EZAlertController.actionSheet("Title", message: "message", actions: [UIAlertAction(title: "First Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+    print("First Button pressed")
+}), UIAlertAction(title: "Second Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+    print("Second Button pressed")
+})])
+```
+
+![EZAlertController](http://i.imgur.com/uv32LYJ.png)
 
 ###Requirements
 
