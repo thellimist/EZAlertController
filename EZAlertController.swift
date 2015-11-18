@@ -82,4 +82,13 @@ public class EZAlertController {
         instance.topMostController().presentViewController(alert, animated: true, completion: nil)
         return alert
     }
+
+    public class func actionSheet(title: String, message: String, actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        for action in actions {
+            alert.addAction(action)
+        }
+        instance.topMostController().presentViewController(alert, animated: true, completion: nil)
+    }
+    
 }
