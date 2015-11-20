@@ -91,4 +91,42 @@ public class EZAlertController {
         instance.topMostController().presentViewController(alert, animated: true, completion: nil)
     }
     
+    public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert, buttons: buttons, tapBlock: tapBlock)
+        instance.topMostController().presentViewController(alert, animated: true, completion: nil)
+        return alert
+    }
+    
+    public class func actionSheet(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet, buttons: buttons, tapBlock: tapBlock)
+        instance.topMostController().presentViewController(alert, animated: true, completion: nil)
+        return alert
+    }
+    
+}
+
+
+extension UIAlertController {
+    convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
+        self.init(title: title, message: message, preferredStyle:preferredStyle)
+        var buttonIndex = 0
+        for buttonTitle in buttons {
+            let action = UIAlertAction(title: buttonTitle, preferredStyle: .Default, buttonIndex: buttonIndex, tapBlock: tapBlock)
+            buttonIndex++
+            self.addAction(action)
+        }
+    }
+}
+
+
+
+extension UIAlertAction {
+    convenience init(title: String?, preferredStyle: UIAlertActionStyle, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
+        self.init(title: title, style: style) {
+            (action:UIAlertAction) in
+            if let block = tapBlock {
+                block(action,buttonIndex)
+            }
+        }
+    }
 }
