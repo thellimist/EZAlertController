@@ -22,40 +22,18 @@ EZAlertController.alert("Title", message: "Message", acceptMessage: "OK") { () -
 ```
 ![EZAlertController](http://i.imgur.com/OpKVypB.png)
 
-### Two Button Alerts
-
-```swift
-EZAlertController.alert("Title", message: "Message", cancelBlock: 
-  { () -> () in
-    print("clicked cancel")
-    }) { () -> () in
-     print("clicked accept")
-}
-
-EZAlertController.alert("Title", message: "Message", leftButtonMessage: "Cancel", rightButtonMessage: "Accept", leftBlock: 
-  { () -> () in
-    print("clicked cancel")
-    }) { () -> () in
-      print("clicked accept")
-}
-```
-![EZAlertController](http://i.imgur.com/Qwgg71G.png)
-
 ### Multiple Button Alerts
 
 ```swift
-EZAlertController.alert("Title", message: "Message", buttons: ["First", "Second", "Third"]) { (alertAction, position) -> Void in
+EZAlertController.alert("Title", message: "Message", buttons: ["First", "Second"]) { (alertAction, position) -> Void in
     if position == 0 {
-        print("first button clicked")
+        print("First button clicked")
     } else if position == 1 {
-        print("second button clicked")
-    } else if position == 2 {
-        print("third button clicked")
+        print("Second button clicked")
     }
 }
 ```
-![EZAlertController](http://i.imgur.com/XOmi0cb.png)
-
+![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
 ### Customizable
 
@@ -84,9 +62,9 @@ EZAlertController.actionSheet("Title", message: "message", actions: [firstButton
 // With all actions in single closure
 EZAlertController.actionSheet("Title", message: "Message", buttons: ["First", "Second"]) { (alertAction, position) -> Void in
     if position == 0 {
-        print("first button clicked")
+        print("First button clicked")
     } else if position == 1 {
-        print("second button clicked")
+        print("Second button clicked")
     }
 }
 ```
