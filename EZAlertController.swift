@@ -89,7 +89,7 @@ public class EZAlertController {
 }
 
 
-extension UIAlertController {
+private extension UIAlertController {
     convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, message: message, preferredStyle:preferredStyle)
         var buttonIndex = 0
@@ -103,7 +103,7 @@ extension UIAlertController {
 
 
 
-extension UIAlertAction {
+private extension UIAlertAction {
     convenience init(title: String?, preferredStyle: UIAlertActionStyle, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, style: style) {
             (action:UIAlertAction) in
