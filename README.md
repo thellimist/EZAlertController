@@ -20,7 +20,7 @@ EZAlertController.alert("Title", message: "Message", acceptMessage: "OK") { () -
     print("cliked OK")
 }
 ```
-![EZAlertController](http://i.imgur.com/A2M444x.png)
+![EZAlertController](http://i.imgur.com/OpKVypB.png)
 
 ### Two Button Alerts
 
@@ -41,10 +41,26 @@ EZAlertController.alert("Title", message: "Message", leftButtonMessage: "Cancel"
 ```
 ![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
+### Multiple Button Alerts
+
+```swift
+EZAlertController.alert("Title", message: "Message", buttons: ["First", "Second", "Third"]) { (alertAction, position) -> Void in
+    if position == 0 {
+        print("first button clicked")
+    } else if position == 1 {
+        print("second button clicked")
+    } else if position == 2 {
+        print("third button clicked")
+    }
+}
+```
+![EZAlertController](http://i.imgur.com/XOmi0cb.png)
+
+
 ### Customizable
 
 ```swift
-let alertController = EZAlertController.alert("My Title") // Returns UIAlertController
+let alertController = EZAlertController.alert("Title") // Returns UIAlertController
 alertController.buttonCornerRadius = 20.0f;
 alertController.view.tintColor = self.view.tintColor;
 alertController.titleFont = UIFont(name: "AvenirNext-Bold", size: 19.0)
@@ -55,11 +71,24 @@ alertController.backgroundTapDismissalGestureEnabled = true
 ### Action Sheet
 
 ```swift
-EZAlertController.actionSheet("Title", message: "message", actions: [UIAlertAction(title: "First Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+// With individual UIAlertAction objects
+let firstButtonAction = UIAlertAction(title: "First Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
     print("First Button pressed")
-}), UIAlertAction(title: "Second Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
+})
+let secondButtonAction = UIAlertAction(title: "Second Button", style: UIAlertActionStyle.Default, handler: { (UIAlertAction) -> Void in
     print("Second Button pressed")
-})])
+})
+
+EZAlertController.actionSheet("Title", message: "message", actions: [firstButtonAction, secondButtonAction])
+
+// With all actions in single closure
+EZAlertController.actionSheet("Title", message: "Message", buttons: ["First", "Second"]) { (alertAction, position) -> Void in
+    if position == 0 {
+        print("first button clicked")
+    } else if position == 1 {
+        print("second button clicked")
+    }
+}
 ```
 
 ![EZAlertController](http://i.imgur.com/uv32LYJ.png)
