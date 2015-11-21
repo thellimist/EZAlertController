@@ -1,16 +1,9 @@
 # Check list
-# git pull
-# change s.version
-# pod lib lint EZAlertController.podspec
-# git tag <New Tag>
-# git add & git commit
-# git push
-# pod spec lint EZAlertController.podspec
-# pod trunk push EZAlertController.podspec
+# https://github.com/thellimist/EZPods
 
 Pod::Spec.new do |s|
 s.name             = "EZAlertController"
-s.version          = "0.2"
+s.version          = "0.3"
 s.summary          = "Easy Swift UIAlertController"
 s.description      = "Easy Swift UIAlertController with only one line"
 s.homepage         = "https://github.com/thellimist/EZAlertController"
