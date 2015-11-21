@@ -65,40 +65,17 @@ public class EZAlertController {
         return alert
     }
     
-    public class func alert(title: String, message: String, cancelBlock: () -> (), acceptBlock: () -> ()) -> UIAlertController {
-        return alert(title, message: message, leftButtonMessage: "Cancel", rightButtonMessage: "Accept", leftBlock: { () -> () in
-            cancelBlock()
-            }) { () -> () in
-                acceptBlock()
-        }
-    }
-    
-    public class func alert(title: String, message: String, leftButtonMessage: String, rightButtonMessage: String, leftBlock: () -> (), rightBlock: () -> ()) -> UIAlertController {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let declineButton = UIAlertAction(title: leftButtonMessage, style: .Default, handler: { (action: UIAlertAction) in
-            leftBlock()
-        })
-        let acceptButton = UIAlertAction(title: rightButtonMessage, style: .Default, handler: { (action: UIAlertAction) in
-            rightBlock()
-        })
-        alert.addAction(declineButton)
-        alert.addAction(acceptButton)
-        
+    public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert, buttons: buttons, tapBlock: tapBlock)
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
     
-    public class func actionSheet(title: String, message: String, actions: [UIAlertAction]) {
+    public class func actionSheet(title: String, message: String, actions: [UIAlertAction]) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet)
         for action in actions {
             alert.addAction(action)
         }
-        instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert, buttons: buttons, tapBlock: tapBlock)
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
