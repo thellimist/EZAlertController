@@ -35,17 +35,6 @@ EZAlertController.alert("Title", message: "Message", buttons: ["First", "Second"
 ```
 ![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
-### Customizable
-
-```swift
-let alertController = EZAlertController.alert("Title") // Returns UIAlertController
-alertController.buttonCornerRadius = 20.0f;
-alertController.view.tintColor = self.view.tintColor;
-alertController.titleFont = UIFont(name: "AvenirNext-Bold", size: 19.0)
-alertController.backgroundTapDismissalGestureEnabled = true
-...
-```
-
 ### Action Sheet
 
 ```swift
@@ -70,6 +59,16 @@ EZAlertController.actionSheet("Title", message: "Message", buttons: ["First", "S
 ```
 
 ![EZAlertController](http://i.imgur.com/uv32LYJ.png)
+
+### Customizable
+
+```swift
+let alertController = EZAlertController.alert("Title") // Returns UIAlertController
+alertController.setValue(attributedTitle, forKey: "attributedTitle") 
+alertController.setValue(attributedMessage, forKey: "attributedMessage")
+alertController.view.tintColor =  self.view.tintColor
+...
+```
 
 ###Requirements
 
