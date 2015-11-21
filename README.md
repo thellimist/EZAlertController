@@ -83,7 +83,7 @@ You can use [Cocoapods](http://cocoapods.org/) to install `EZAlertController` by
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'EZAlertController'
+pod 'EZAlertController', '0.3'
 ```
 
 ### Install Manually
