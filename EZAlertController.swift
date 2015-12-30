@@ -71,17 +71,21 @@ public class EZAlertController {
         return alert
     }
     
-    public class func actionSheet(title: String, message: String, actions: [UIAlertAction]) -> UIAlertController {
+    public class func actionSheet(title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.ActionSheet)
         for action in actions {
             alert.addAction(action)
         }
+        alert.popoverPresentationController?.sourceView = sourceView
+        alert.popoverPresentationController?.sourceRect = sourceView.bounds
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
     
-    public class func actionSheet(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+    public class func actionSheet(title: String, message: String, sourceView: UIView, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet, buttons: buttons, tapBlock: tapBlock)
+        alert.popoverPresentationController?.sourceView = sourceView
+        alert.popoverPresentationController?.sourceRect = sourceView.bounds
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
