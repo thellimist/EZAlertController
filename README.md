@@ -1,6 +1,6 @@
 EZAlertController
 ==============
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Easy Swift UIAlertController
 
@@ -78,7 +78,7 @@ alertController.view.tintColor =  self.view.tintColor
 
 ### Install via CocoaPods
 
-You can use [Cocoapods](http://cocoapods.org/) to install `EZAlertController` by adding it to your `Podfile`:
+You can use [CocoaPods](http://cocoapods.org/) to install `EZAlertController` by adding it to your `Podfile`:
 ```ruby
 platform :ios, '8.0'
 use_frameworks!
