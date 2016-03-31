@@ -6,6 +6,7 @@ Easy Swift UIAlertController
 
 - One line setup for all UIAlertControllers
 - Button action with closures instead of selectors
+- Possibility of adding one or more UITextField
 - Easily customizable
 - Easy action sheets
 

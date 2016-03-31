@@ -55,18 +55,29 @@ public class EZAlertController {
     }
     
     public class func alert(title: String, message: String, acceptMessage: String, acceptBlock: () -> ()) -> UIAlertController {
+        return alert(title,message: message,acceptMessage: acceptMessage,acceptBlock: acceptBlock,textFieldCompletitionHandler: nil)
+    }
+    
+    public class func alert(title: String, message: String, acceptMessage: String, acceptBlock: () -> (), textFieldCompletitionHandler : (UITextField -> Void)? ) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let acceptButton = UIAlertAction(title: acceptMessage, style: .Default, handler: { (action: UIAlertAction) in
             acceptBlock()
         })
         alert.addAction(acceptButton)
+        if (textFieldCompletitionHandler != nil ) {
+            alert.addTextFieldWithConfigurationHandler(textFieldCompletitionHandler)
+        }
         
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
     
     public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert, buttons: buttons, tapBlock: tapBlock)
+        return alert(title, message: message, buttons: buttons, tapBlock: tapBlock, textFieldCompletitionHandler: nil)
+    }
+    
+    public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?, textFieldCompletitionHandler : [(UITextField -> Void)?]?) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert, buttons: buttons, tapBlock: tapBlock, textFieldsCompletitionHandler: textFieldCompletitionHandler)
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
         return alert
     }
@@ -83,7 +94,7 @@ public class EZAlertController {
     }
     
     public class func actionSheet(title: String, message: String, sourceView: UIView, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet, buttons: buttons, tapBlock: tapBlock)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet, buttons: buttons, tapBlock: tapBlock, textFieldsCompletitionHandler: nil)
         alert.popoverPresentationController?.sourceView = sourceView
         alert.popoverPresentationController?.sourceRect = sourceView.bounds
         instance.topMostController()?.presentViewController(alert, animated: true, completion: nil)
@@ -94,7 +105,7 @@ public class EZAlertController {
 
 
 private extension UIAlertController {
-    convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
+    convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?, textFieldsCompletitionHandler : [(UITextField -> Void)?]? ) {
         self.init(title: title, message: message, preferredStyle:preferredStyle)
         var buttonIndex = 0
         for buttonTitle in buttons {
@@ -102,6 +113,13 @@ private extension UIAlertController {
             buttonIndex++
             self.addAction(action)
         }
+        
+        if let textFieldsCompletitionHandler = textFieldsCompletitionHandler {
+            for compHandler in textFieldsCompletitionHandler {
+                addTextFieldWithConfigurationHandler(compHandler)
+            }
+        }
+        
     }
 }
 
