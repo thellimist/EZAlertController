@@ -99,7 +99,7 @@ private extension UIAlertController {
         var buttonIndex = 0
         for buttonTitle in buttons {
             let action = UIAlertAction(title: buttonTitle, preferredStyle: .Default, buttonIndex: buttonIndex, tapBlock: tapBlock)
-            buttonIndex++
+            buttonIndex += 1
             self.addAction(action)
         }
     }
