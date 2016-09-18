@@ -9,6 +9,8 @@ Easy Swift UIAlertController
 - Easily customizable
 - Easy action sheets
 
+Swift 2.0 is maintained in [this](https://github.com/thellimist/EZAlertController/tree/2.x) branch
+
 ## Usage
 
 ### One Button Alert
@@ -64,7 +66,7 @@ EZAlertController.actionSheet("Title", message: "Message", buttons: ["First", "S
 
 ```swift
 let alertController = EZAlertController.alert("Title") // Returns UIAlertController
-alertController.setValue(attributedTitle, forKey: "attributedTitle") 
+alertController.setValue(attributedTitle, forKey: "attributedTitle")
 alertController.setValue(attributedMessage, forKey: "attributedMessage")
 alertController.view.tintColor =  self.view.tintColor
 ...
@@ -72,7 +74,7 @@ alertController.view.tintColor =  self.view.tintColor
 
 ###Requirements
 
-- Swift version 2.0
+- Swift version 3.0
 
 ## Installation
 
@@ -83,7 +85,7 @@ You can use [CocoaPods](http://cocoapods.org/) to install `EZAlertController` by
 platform :ios, '8.0'
 use_frameworks!
 
-pod 'EZAlertController', '0.3'
+pod 'EZAlertController', '3.0'
 ```
 
 ### Install Manually
@@ -98,7 +100,3 @@ pod 'EZAlertController', '0.3'
 
 ##Keywords
 swift, alert, AlertView, AlertViewController, UIAlertView, UIAlertViewController
-
-
-
-
