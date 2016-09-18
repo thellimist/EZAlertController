@@ -1,6 +1,6 @@
 EZAlertController
 ==============
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/thellimist/ezalertcontroller/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/EZAlertController.svg)](https://img.shields.io/cocoapods/v/EZAlertController.svg) 
 
 Easy Swift UIAlertController
 
@@ -8,6 +8,8 @@ Easy Swift UIAlertController
 - Button action with closures instead of selectors
 - Easily customizable
 - Easy action sheets
+
+Swift 3.0 is maintained in [master](https://github.com/thellimist/EZAlertController/tree/master) branch
 
 ## Usage
 
