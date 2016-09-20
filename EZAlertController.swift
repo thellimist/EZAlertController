@@ -1,17 +1,3 @@
-//: Playground - noun: a place where people can play
-
-import UIKit
-
-var str = "Hello, playground"
-
-//
-//  EZAlertView.swift
-//  EZAlertView
-//
-//  Created by Furkan Yilmaz on 11/11/15.
-//  Copyright © 2015 Furkan Yilmaz. All rights reserved.
-//
-
 import UIKit
 
 public class EZAlertController {
