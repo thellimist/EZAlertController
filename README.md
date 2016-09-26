@@ -9,7 +9,7 @@ Easy Swift UIAlertController
 - Easily customizable
 - Easy action sheets
 
-Swift 2.0 is maintained in [this](https://github.com/thellimist/EZAlertController/tree/2.x) branch
+*Swift 2.0 is maintained in [this](https://github.com/thellimist/EZAlertController/tree/2.x) branch*
 
 ## Usage
 
