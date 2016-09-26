@@ -8,70 +8,70 @@
 
 import UIKit
 
-public class EZAlertController {
-    
+open class EZAlertController {
+
     //==========================================================================================================
     // MARK: - Singleton
     //==========================================================================================================
-    
+
     class var instance : EZAlertController {
         struct Static {
             static let inst : EZAlertController = EZAlertController ()
         }
         return Static.inst
     }
-    
+
     //==========================================================================================================
     // MARK: - Private Functions
     //==========================================================================================================
-    
-    private func topMostController() -> UIViewController? {
-        
-		  var presentedVC = UIApplication.shared.keyWindow?.rootViewController
+
+    fileprivate func topMostController() -> UIViewController? {
+
+        var presentedVC = UIApplication.shared.keyWindow?.rootViewController
         while let pVC = presentedVC?.presentedViewController
         {
             presentedVC = pVC
         }
-        
+
         if presentedVC == nil {
             print("EZAlertController Error: You don't have any views set. You may be calling in viewdidload. Try viewdidappear.")
         }
         return presentedVC
     }
-    
-    
+
+
     //==========================================================================================================
     // MARK: - Class Functions
     //==========================================================================================================
-    
-    public class func alert(title: String) -> UIAlertController {
-        return alert(title: title, message: "")
+
+    open class func alert(_ title: String) -> UIAlertController {
+        return alert(title, message: "")
     }
-	
-    public class func alert(title: String, message: String) -> UIAlertController {
-        return alert(title: title, message: message, acceptMessage: "OK", acceptBlock: { 
-			// Do nothing
-		})
+
+    open class func alert(_ title: String, message: String) -> UIAlertController {
+        return alert(title, message: message, acceptMessage: "OK", acceptBlock: {
+            // Do nothing
+        })
     }
-    
-    public class func alert(title: String, message: String, acceptMessage: String, acceptBlock: @escaping () -> ()) -> UIAlertController {
+
+    open class func alert(_ title: String, message: String, acceptMessage: String, acceptBlock: @escaping () -> ()) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let acceptButton = UIAlertAction(title: acceptMessage, style: .default, handler: { (action: UIAlertAction) in
             acceptBlock()
         })
         alert.addAction(acceptButton)
-        
+
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
-    
-    public class func alert(title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+
+    open class func alert(_ title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert, buttons: buttons, tapBlock: tapBlock)
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
-    
-    public class func actionSheet(title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
+
+    open class func actionSheet(_ title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
         for action in actions {
             alert.addAction(action)
@@ -81,15 +81,15 @@ public class EZAlertController {
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
-    
-    public class func actionSheet(title: String, message: String, sourceView: UIView, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+
+    open class func actionSheet(_ title: String, message: String, sourceView: UIView, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet, buttons: buttons, tapBlock: tapBlock)
         alert.popoverPresentationController?.sourceView = sourceView
         alert.popoverPresentationController?.sourceRect = sourceView.bounds
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
-    
+
 }
 
 
