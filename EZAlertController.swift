@@ -43,17 +43,20 @@ open class EZAlertController {
     //==========================================================================================================
     // MARK: - Class Functions
     //==========================================================================================================
-
+    
+    @discardableResult
     open class func alert(_ title: String) -> UIAlertController {
         return alert(title, message: "")
     }
-
+    
+    @discardableResult
     open class func alert(_ title: String, message: String) -> UIAlertController {
         return alert(title, message: message, acceptMessage: "OK", acceptBlock: {
             // Do nothing
         })
     }
 
+    @discardableResult
     open class func alert(_ title: String, message: String, acceptMessage: String, acceptBlock: @escaping () -> ()) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         let acceptButton = UIAlertAction(title: acceptMessage, style: .default, handler: { (action: UIAlertAction) in
@@ -65,12 +68,14 @@ open class EZAlertController {
         return alert
     }
 
+    @discardableResult
     open class func alert(_ title: String, message: String, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert, buttons: buttons, tapBlock: tapBlock)
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
 
+    @discardableResult
     open class func actionSheet(_ title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
         for action in actions {
@@ -82,6 +87,7 @@ open class EZAlertController {
         return alert
     }
 
+    @discardableResult
     open class func actionSheet(_ title: String, message: String, sourceView: UIView, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet, buttons: buttons, tapBlock: tapBlock)
         alert.popoverPresentationController?.sourceView = sourceView
