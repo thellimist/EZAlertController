@@ -115,7 +115,7 @@ private extension UIAlertController {
 
 private extension UIAlertAction {
     convenience init(title: String?, preferredStyle: UIAlertActionStyle, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
-        self.init(title: title, style: style) {
+        self.init(title: title, style: preferredStyle) {
             (action:UIAlertAction) in
             if let block = tapBlock {
                 block(action,buttonIndex)
