@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
 s.name             = "EZAlertController"
-s.version          = "3.1"
+s.version          = "3.2"
 s.summary          = "Easy Swift UIAlertController"
 s.description      = "Easy Swift UIAlertController with only one line"
 s.homepage         = "https://github.com/thellimist/EZAlertController"
