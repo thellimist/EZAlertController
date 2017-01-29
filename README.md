@@ -72,6 +72,16 @@ alertController.view.tintColor =  self.view.tintColor
 ...
 ```
 
+### Objective-C support
+
+```objective-c
+#import "ProjectName-Swift.h"
+
+...
+
+[EZAlertController alert:@"Title" message:@"Message"];
+```
+
 ###Requirements
 
 - Swift version 3.0
