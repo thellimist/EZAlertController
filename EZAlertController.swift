@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class EZAlertController {
+@objc open class EZAlertController : NSObject {
 
     //==========================================================================================================
     // MARK: - Singleton
