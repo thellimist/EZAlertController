@@ -82,7 +82,7 @@ alertController.view.tintColor =  self.view.tintColor
 [EZAlertController alert:@"Title" message:@"Message"];
 ```
 
-###Requirements
+### Requirements
 
 - Swift version 3.0
 
