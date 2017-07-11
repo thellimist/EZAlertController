@@ -102,11 +102,11 @@ pod 'EZAlertController', '3.2'
 
 - Download and drop 'EZAlertController.swift' in your project.
 
-##Improvement
+## Improvement
 - Feel free sending pull requests.
 
-##License
+## License
 - EZAlertController is available under the MIT license. See the [LICENSE file](https://github.com/thellimist/EZAlertController/blob/master/LICENSE).
 
-##Keywords
+## Keywords
 swift, alert, AlertView, AlertViewController, UIAlertView, UIAlertViewController
