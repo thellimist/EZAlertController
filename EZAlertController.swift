@@ -58,7 +58,7 @@ import UIKit
 
     @discardableResult
     open class func alert(_ title: String, message: String, acceptMessage: String, acceptBlock: @escaping () -> ()) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         let acceptButton = UIAlertAction(title: acceptMessage, style: .default, handler: { (action: UIAlertAction) in
             acceptBlock()
         })
@@ -77,7 +77,7 @@ import UIKit
 
     @discardableResult
     open class func actionSheet(_ title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.actionSheet)
         for action in actions {
             alert.addAction(action)
         }
@@ -100,7 +100,7 @@ import UIKit
 
 
 private extension UIAlertController {
-    convenience init(title: String?, message: String?, preferredStyle: UIAlertControllerStyle, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
+    convenience init(title: String?, message: String?, preferredStyle: UIAlertController.Style, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, message: message, preferredStyle:preferredStyle)
         var buttonIndex = 0
         for buttonTitle in buttons {
@@ -114,7 +114,7 @@ private extension UIAlertController {
 
 
 private extension UIAlertAction {
-    convenience init(title: String?, preferredStyle: UIAlertActionStyle, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
+    convenience init(title: String?, preferredStyle: UIAlertController.Style, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, style: preferredStyle) {
             (action:UIAlertAction) in
             if let block = tapBlock {
