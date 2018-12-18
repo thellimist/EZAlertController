@@ -98,6 +98,12 @@ use_frameworks!
 pod 'EZAlertController', '3.2'
 ```
 
+### Install via Carthage
+
+You can use [Carthage](https://github.com/Carthage/Carthage) to install `EZAlertController`. Add this line to your `Cartfile`:
+
+```github "thellimist/EZAlertController"```
+
 ### Install Manually
 
 - Download and drop 'EZAlertController.swift' in your project.
