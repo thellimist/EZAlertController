@@ -98,7 +98,6 @@ import UIKit
 
 }
 
-
 private extension UIAlertController {
     convenience init(title: String?, message: String?, preferredStyle: UIAlertController.Style, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, message: message, preferredStyle:preferredStyle)
@@ -111,10 +110,8 @@ private extension UIAlertController {
     }
 }
 
-
-
 private extension UIAlertAction {
-    convenience init(title: String?, preferredStyle: UIAlertController.Style, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
+    convenience init(title: String?, preferredStyle: UIAlertAction.Style = .default, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, style: preferredStyle) {
             (action:UIAlertAction) in
             if let block = tapBlock {
