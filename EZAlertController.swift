@@ -92,12 +92,11 @@ import UIKit
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet, buttons: buttons, tapBlock: tapBlock)
         alert.popoverPresentationController?.sourceView = sourceView
         alert.popoverPresentationController?.sourceRect = sourceView.bounds
-        instance.topMostController()?.present(alert, animated: true, completion: nil)
+        instance.topprivateMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
 
 }
-
 
 private extension UIAlertController {
     convenience init(title: String?, message: String?, preferredStyle: UIAlertController.Style, buttons:[String], tapBlock:((UIAlertAction,Int) -> Void)?) {
@@ -111,10 +110,8 @@ private extension UIAlertController {
     }
 }
 
-
-
 private extension UIAlertAction {
-    convenience init(title: String?, preferredStyle: UIAlertController.Style, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
+    convenience init(title: String?, preferredStyle: UIAlertAction.Style = .default, buttonIndex:Int, tapBlock:((UIAlertAction,Int) -> Void)?) {
         self.init(title: title, style: preferredStyle) {
             (action:UIAlertAction) in
             if let block = tapBlock {
