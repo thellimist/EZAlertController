@@ -98,6 +98,11 @@ use_frameworks!
 pod 'EZAlertController', '3.2'
 ```
 
+For current master branch 
+```
+pod 'EZAlertController', :git => "https://github.com/thellimist/EZAlertController.git", :branch => 'master'
+```
+
 ### Install Manually
 
 - Download and drop 'EZAlertController.swift' in your project.
