@@ -92,7 +92,7 @@ import UIKit
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet, buttons: buttons, tapBlock: tapBlock)
         alert.popoverPresentationController?.sourceView = sourceView
         alert.popoverPresentationController?.sourceRect = sourceView.bounds
-        instance.topprivateMostController()?.present(alert, animated: true, completion: nil)
+        instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
 
