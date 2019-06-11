@@ -74,6 +74,13 @@ import UIKit
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
+    
+    @discardableResult
+    open class func alert(_ title: String, message: String, buttons:[String], buttonsPreferredStyle:[UIAlertAction.Style], tapBlock:((UIAlertAction,Int) -> Void)?) -> UIAlertController{
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert, buttons: buttons, buttonsPreferredStyle: buttonsPreferredStyle, tapBlock: tapBlock)
+        instance.topMostController()?.present(alert, animated: true, completion: nil)
+        return alert
+    }
 
     @discardableResult
     open class func actionSheet(_ title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
@@ -104,6 +111,16 @@ private extension UIAlertController {
         var buttonIndex = 0
         for buttonTitle in buttons {
             let action = UIAlertAction(title: buttonTitle, preferredStyle: .default, buttonIndex: buttonIndex, tapBlock: tapBlock)
+            buttonIndex += 1
+            self.addAction(action)
+        }
+    }
+    
+    convenience init(title: String?, message: String?, preferredStyle: UIAlertController.Style, buttons:[String], buttonsPreferredStyle:[UIAlertAction.Style], tapBlock:((UIAlertAction,Int) -> Void)?) {
+        self.init(title: title, message: message, preferredStyle:preferredStyle)
+        var buttonIndex = 0
+        for buttonTitle in buttons {
+            let action = UIAlertAction(title: buttonTitle, preferredStyle: buttonsPreferredStyle[buttonIndex], buttonIndex: buttonIndex, tapBlock: tapBlock)
             buttonIndex += 1
             self.addAction(action)
         }
