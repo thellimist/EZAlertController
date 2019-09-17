@@ -34,6 +34,16 @@ EZAlertController.alert("Title", message: "Message", buttons: ["First", "Second"
         print("Second button clicked")
     }
 }
+
+// With Preferred Button Style along with all alerts in a single closure
+// Here the Logout button will be red in color to show that it is a destructive action
+EZAlertController.alert("Title", message: "Message", buttons: ["Cancel","Logout"], buttonsPreferredStyle:[.default, .destructive]) { (alert, position) in 
+    if position == 0 {
+        print("Cancel button clicked")
+    } else if position == 1 {
+        print("Logout button clicked")
+    }
+}
 ```
 ![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
