@@ -45,6 +45,8 @@ EZAlertController.alert("Title", message: "Message", buttons: ["Cancel","Logout"
     }
 }
 ```
+![IMG_0920](https://user-images.githubusercontent.com/40712137/65062275-545b3d00-d999-11e9-88cc-ff03ba17410a.jpg)
+
 ![EZAlertController](http://i.imgur.com/Qwgg71G.png)
 
 ### Action Sheet
