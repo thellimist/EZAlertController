@@ -81,6 +81,16 @@ import UIKit
         instance.topMostController()?.present(alert, animated: true, completion: nil)
         return alert
     }
+    
+    @discardableResult
+    open class func alert(_ title: String, message: String, actions: [UIAlertAction]) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        for action in actions {
+            alert.addAction(action)
+        }
+        instance.topMostController()?.present(alert, animated: true, completion: nil)
+        return alert
+    }
 
     @discardableResult
     open class func actionSheet(_ title: String, message: String, sourceView: UIView, actions: [UIAlertAction]) -> UIAlertController {
