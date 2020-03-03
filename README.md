@@ -97,7 +97,7 @@ alertController.view.tintColor =  self.view.tintColor
 
 ### Requirements
 
-- Swift version 3.0
+- Swift version 4.0
 
 ## Installation
 
